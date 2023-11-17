@@ -19,10 +19,8 @@ module.exports = function(filepath) {
 				throw err;
 			}
 
-			const image = png.width !== 256
-				? resize(png, 256, 256)
-				: png
-			;
+	 		const image = resize(png, png.width, png.height);
+
 
 			const resizedImages = sizeList.map(
 				targetSize => resize(image, targetSize, targetSize)
